@@ -1,0 +1,36 @@
+const [contacts, setContacts] = useState([]);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const addContact = () => {
+    if (name && email) {
+      setContacts([...contacts, { name, email }]);
+      setName('');
+      setEmail('');
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>Contact App</h1>
+      <div>
+        <label>Name:</label>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      </div>
+      <button onClick={addContact}>Add Contact</button>
+      <div>
+        <h2>Contact List:</h2>
+        <ul>
+          {contacts.map((contact, index) => (
+            <li key={index}>
+              {contact.name} - {contact.email}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );

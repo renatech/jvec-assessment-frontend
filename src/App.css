@@ -1,4 +1,9 @@
-
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Calibri;
+}
 
 .App {
   text-align: center;
@@ -47,10 +52,301 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  background-color: #D5E4E1;
 }
 
 #app-container{
-  width:500px;
+  width:450px;
   height: 100%;
-  background-color: #f0f0f0;
+  background-color: #E5EEEB;
+  overflow: auto;
+  position: relative;
+}
+
+#myapp-container{
+  padding: 20px;
+}
+
+#myapp-container h4{
+  margin-bottom: 5px;
+}
+
+.paragraph-small{
+  font-size: 12px;
+  opacity: .6;
+}
+
+.icon-container{
+  width:25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-head{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#add-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#add-text{
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+/* Navbar */
+
+#navbar-container{
+  width:100%;
+  height: 55px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ffffff;
+}
+
+#navbar-icon{
+  width:30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+/* Search  */
+
+#search-container{
+  width:100%;
+  display: flex;
+  background-color: #D5E4E1;
+  border-radius: 10px;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+
+#search-container input{
+  border:0;
+  background-color: transparent;
+  width: 100%;
+  height: 30px;
+}
+
+#search-container input:focus{
+  outline: none;
+}
+
+
+/* User */
+#all-user{
+  padding: 20px 0px;
+}
+
+.user-container{
+  width:100%;
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.user-left{
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.user-icon{
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.user-info{
+  width: fit-content;
+}
+
+.user-name{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-phone{
+  font-size: 12px;
+  opacity: .7;
+}
+
+
+/* details */
+
+#user-logo{
+  width:100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#details-page-container{
+  width:100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ position: relative;
+}
+
+#details-card{
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top:-50px;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+}
+
+#btn-container{
+  margin-top:20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn{
+  margin-right: 20px;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+#details-history-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#history-header{
+  padding: 10px 30px;
+  background-color: #D5E4E1;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#edit-form{
+  padding-top: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input{
+  margin-bottom: 20px;
+}
+
+/* Add form */
+
+#form-btn{
+  margin-top: 50px;
+}
+
+/* login */
+
+#login-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left:0;
+  top:0;
+  padding: 40px 20px;
+}
+
+#login-container h2{
+  font-size: 25px;
+  font-weight: 500;
+}
+#welcome-msg{
+  margin: 30px 0px;
+  font-size: 30px;
+}
+
+#my-form{
+  margin: 30px 0px;
+}
+
+#login-submit{
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #1677ff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#text-bold{
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#other-text{
+  margin-top: 20px;
+}
+
+/* more form */
+.form-label-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.error-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff4d4f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.label{
+  font-weight: 400;
+}
+
+@media only screen and (max-width:500px) {
+  #app-container{
+    width: 100%;
+  }
 }
