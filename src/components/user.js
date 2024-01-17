@@ -1,29 +1,21 @@
 import { DeleteOutlined } from '@ant-design/icons';
-import {Popconfirm, message  } from 'antd';
+import {Popconfirm  } from 'antd';
 
-const colors = ['#4B55B7','#068EFE','#53D575']
-const min = 0;
-const max_num = colors.length - 1
-
-function chooseBackground() {
-    const index = Math.floor(Math.random() * (max_num - min + 1)) + min;
-    return colors[index]
-}
 
 export const User=(props)=>{
     const confirm = (e) => {
         console.log(e);
-        message.success('Click on Yes');
+        // message.success('Click on Yes');
+        props.deleteContact(props.id)
       };
       const cancel = (e) => {
         console.log(e);
-        message.error('Click on No');
       };
 
     return(
         <div className="user-container">
             <div className="user-left" onClick={props.change}>
-                <div className="user-icon" style={{backgroundColor:chooseBackground()}}>
+                <div className="user-icon" style={{backgroundColor:props.background}}>
                     {props.name[0]}
                 </div>
                 <div className="user-info">

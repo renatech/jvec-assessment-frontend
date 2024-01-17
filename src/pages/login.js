@@ -1,6 +1,37 @@
-import { Input,Button  } from 'antd';
+import { MyForm } from '../form/builder';
+import { useState, useEffect } from 'react';
+import { clearFormData } from '../form/cleanup';
+
+const form=[
+    {
+        id:"username",
+        label:'Enter Username',
+        value:"",
+        type:"text",
+        error:null,
+        placeholder:"John"
+    },
+    {
+        id:"password",
+        label:'Enter Password',
+        value:"",
+        type:"password",
+        error:null,
+        placeholder:"***********"
+    },
+]
 
 export const Login=(props)=>{
+    const [formData,setFormData] = useState(form)
+
+    useEffect(()=>{
+        
+        return ()=>{
+            const newData = clearFormData(form)
+            setFormData(newData)
+        }
+    },[])
+    
     return(
         <div id="login-container">
 
@@ -10,17 +41,17 @@ export const Login=(props)=>{
                 </div>
 
                 <div id="my-form">
-                <Input onInput={(e)=>{
-                    
-                }} placeholder="Username" size="large" style={{backgroundColor:"transparent", marginBottom:'20px'}}/>
-                
-
-                <Input onInput={(e)=>{
-        
-                }} placeholder="Password" type='password'  size="large" style={{backgroundColor:"transparent", marginBottom:'20px'}}/>
+                <MyForm 
+                        method="POST"
+                        page="login"
+                        action="login/"
+                        data={formData} 
+                        updateForm={setFormData} 
+                        btnType={"login"} 
+                        btnFunction={null}
+                        btnText={"Sign In"}
+                    />
                 </div>
-
-                <Button type="primary" block size='large'>Login</Button>
             </div>
 
             <div id="other-text">

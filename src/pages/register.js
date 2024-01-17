@@ -1,9 +1,10 @@
-import { Input,Button } from 'antd';
-import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { MyForm } from '../form/builder';
+import { useState, useEffect } from 'react';
+import { clearFormData } from '../form/cleanup';
 
 const form=[
     {
+        id:"first_name",
         label:'First Name',
         value:"",
         type:"text",
@@ -11,6 +12,7 @@ const form=[
         placeholder:"John"
     },
     {
+        id:"last_name",
         label:'Last Name',
         value:"",
         type:"text",
@@ -18,6 +20,7 @@ const form=[
         placeholder:"Doe"
     },
     {
+        id:"username",
         label:'Username',
         value:"",
         type:"text",
@@ -25,6 +28,7 @@ const form=[
         placeholder:"JohnDoe"
     },
     {
+        id:"email",
         label:'Email',
         value:"",
         type:"email",
@@ -32,6 +36,7 @@ const form=[
         placeholder:"John@doe.com"
     },
     {
+        id:"password",
         label:'Password',
         value:"",
         type:"password",
@@ -41,6 +46,16 @@ const form=[
 ]
 
 export const Register=(props)=>{
+    const [formData,setFormData] = useState(form)
+    
+    useEffect(()=>{
+        
+        return ()=>{
+            const newData = clearFormData(form)
+            setFormData(newData)
+        }
+    },[])
+
     return(
         <div id="login-container">
 
@@ -50,10 +65,17 @@ export const Register=(props)=>{
                 </div>
 
                 <div id="my-form">
-                    <MyForm data={form}/>
+                    <MyForm 
+                        method="POST"
+                        page="register"
+                        action="register/"
+                        data={formData} 
+                        updateForm={setFormData} 
+                        btnType={"login"} 
+                        btnFunction={null}
+                        btnText={"Sign Up"}
+                    />
                 </div>
-
-                <Button type="primary" block size='large'>Login</Button>
             </div>
 
             <div id="other-text">
